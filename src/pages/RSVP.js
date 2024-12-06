@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import './Rsvp.css';
 const RSVP = () => {
   // const { register, handleSubmit } = useForm();
@@ -7,7 +7,7 @@ const RSVP = () => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-
+    const navigate = useNavigate();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -60,7 +60,7 @@ const RSVP = () => {
       <input type="hidden" name="form-name" value="pizzaOrder" />
       <label>
         What order did the pizza give to the pineapple?
-        <input name="order" type="text" onChange={handleChange} />
+        <input name="order" type="text"/>
       </label>
       <input type="submit" />
     </form>
