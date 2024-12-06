@@ -66,7 +66,7 @@ const Home = () => {
             {slide.type === 'image' ? (
               <img src={slide.src} alt={`Slide ${index}`} />
             ) : (
-              <video src={slide.src} autoPlay muted loop />
+              <video src={slide.src} autoPlay muted loop playsInline/>
             )}
           </div>
         ))}
