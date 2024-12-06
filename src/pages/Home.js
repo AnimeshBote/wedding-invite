@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [timeLeft, setTimeLeft] = useState({});
-  const countDownDate = new Date("Nov 29, 2024 00:00:00").getTime();
   const [scrollPosition, setScrollPosition] = useState(0);
   const slides = [
     { type: "image", src: "./assets/img/card.png", alt: "Invitation Card" },
@@ -37,7 +35,6 @@ const Home = () => {
   // Calculate the distance between caricatures based on scroll
   const maxDistance = 200;
   const moveFactor = scrollPosition / 10;
-  const distance = Math.min(Math.max(maxDistance - moveFactor, 0), maxDistance);
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
