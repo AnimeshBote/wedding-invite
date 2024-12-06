@@ -1,10 +1,22 @@
 import { useForm } from 'react-hook-form';
 import './Rsvp.css';
 const RSVP = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  // const { register, handleSubmit } = useForm();
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => navigate("/thank-you/"))
+      .catch(error => alert(error));
   };
+
 
   // return (
   //   <div className="rsvp-container">
@@ -39,25 +51,21 @@ const RSVP = () => {
   // );
 
   return (
-    <div>
-      <form 
-        name="rsvp" 
-        method="POST" 
-        data-netlify="true"
-        onSubmit={(e) => e.preventDefault()} // Optional: Prevent default form submission if using custom actions
-      >
-        <input type="hidden" name="form-name" value="rsvp" />
-        
-        <label htmlFor="name">Name:</label>
-        <input type="text" name="name" id="name" required />
-        
-        <label htmlFor="email">Email:</label>
-        <input type="email" name="email" id="email" required />
-        
-        <button type="submit">RSVP</button>
-      </form>
-    </div>
+    <form
+      data-netlify="true"
+      name="pizzaOrder"
+      method="post"
+      onSubmit={handleSubmit}
+    >
+      <input type="hidden" name="form-name" value="pizzaOrder" />
+      <label>
+        What order did the pizza give to the pineapple?
+        <input name="order" type="text" onChange={handleChange} />
+      </label>
+      <input type="submit" />
+    </form>
   );
+
 };
 
 export default RSVP;
