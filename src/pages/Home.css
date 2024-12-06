@@ -321,6 +321,16 @@ body::before {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 50vh;
+      height: 100vh; /* Adjust height for smaller screens */
+    }
   }
   
   .slide {
@@ -363,7 +373,7 @@ body::before {
   
   .controls {
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
