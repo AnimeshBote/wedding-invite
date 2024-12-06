@@ -1,0 +1,415 @@
+/*******************************/
+
+body {
+    font-family: Arial, Helvetica, Sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width:900px) {
+    img {
+        max-width: 100%;
+    }
+}
+
+.top-right-decoration {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+}
+
+.top-left-decoration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.title h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 60px;
+    margin: 32px 0;
+    color: #674ea7;
+}
+
+.title h2 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    color: #e25c67;
+    line-height: 1;
+}
+
+.dance-med {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 32px;
+    color: #674ea7;
+    margin: 16px;
+    text-align: center;
+}
+
+.title h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 24px;
+    color: #674ea7;
+    margin-top: 5px;
+}
+
+.title p {
+    color: #564861;
+    margin: 30px 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 16px;
+}
+
+.wrap {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    /* padding: 20px; */
+    text-align: center;
+    /* min-height:100%; */
+}
+
+
+/** **/
+
+* {
+    /* margin: 0;
+    padding: 0; */
+    font-family: 'Arvo', serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh;
+    width: 100%; */
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: 40px;
+}
+
+#time {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.venue {
+    width: auto;
+    height: auto;
+    background-color: #674ea7;
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.venue a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.block {
+    width: 180px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.days {
+    background: linear-gradient(90deg, #b33a46, #9b313c);
+}
+
+.hours {
+    background: linear-gradient(90deg, #a7c3cd, #90a9b2);
+}
+
+.minutes {
+    background-color: #874562;
+}
+
+.seconds {
+    background-color: #145689;
+}
+
+.date {
+    color: #874562;
+    font-weight: 900;
+}
+
+.place {
+    color: #874562;
+    font-weight: 900;
+}
+
+.footer {
+    color: #564861;
+    text-align: center;
+    font-size: 16px;
+    margin: 24px;
+}
+
+.phone {
+    color: #874562
+}
+
+.end-msg {
+    width: auto;
+    height: auto;
+    padding: 12px;
+    background: linear-gradient(90deg, #b33a46, #9b313c);
+    border-radius: 20px;
+    font-size: 14px;
+    color: #fff;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.happiness {
+    color: #874562;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.twitter {
+    color: #874562;
+}
+
+.music {
+    display: none;
+}
+
+.actions {
+    display: flex;
+    font-size: 12px;
+    letter-spacing: 0pt;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../../public/assets/img/background.jpg');
+    /* Path to your background image */
+    background-size: cover;
+    /* Ensures the image covers the entire screen */
+    background-repeat: repeat;
+    /* Ensures the background image repeats across the page */
+    background-position: center;
+    /* Centers the image */
+    height: 100vh;
+    /* Full height of the viewport */
+    width: 100%;
+    /* Full width of the page */
+    position: relative;
+    /* For stacking context */
+}
+
+body::before {
+    content: '';
+    /* Empty content for the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Semi-transparent black overlay */
+    z-index: -1;
+    /* Make sure the overlay stays behind the content */
+}
+
+.rectangular-img {
+    max-width: 40%;
+    /* Makes the card responsive */
+    height: auto;
+    /* Maintains the aspect ratio of the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Optional: Adds a shadow to the card */
+    border-radius: 8px;
+    /* Optional: Adds rounded corners to the card */
+    transition: max-width 0.3s ease;
+    /* Smooth transition for resizing */
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .rectangular-img {
+        max-width: 100%;
+        /* Increases the size of the card on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rectangular-img {
+        max-width: 100%;
+        /* Further increases size for very small screens */
+    }
+}
+
+
+/* log css */
+.logo {
+    position: absolute;
+    /* Position the logo relative to its nearest positioned ancestor (default body or div) */
+    top: 20px;
+    /* Adjust top distance as per your design */
+    left: 50%;
+    /* Position the logo at the horizontal center of the page */
+    transform: translateX(-50%);
+    /* Offset by half of the logo’s width to center it exactly */
+    z-index: 1001;
+    /* Ensure the logo stays on top of other elements */
+}
+
+
+.logo-image {
+    width: 150px;
+    /* Adjust the size of the logo */
+    height: auto;
+}
+
+#section1 {
+    margin-top: 80px;
+    /* Adjust to the height of your logo + some extra space */
+    padding-top: 20px;
+    /* Optional, to give extra spacing */
+}
+
+/* Section 2 styling */
+
+
+
+.clip {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .slider-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 2000px; /* Creates a 3D effect for smooth transitions */
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease-out;
+    z-index: 1;
+    opacity: 0; /* Start with the slide hidden */
+    transform: scale(1.05); /* Slightly scale the slide for a more dynamic effect */
+  }
+  
+  .slide img,
+  .slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slide.inactive {
+    z-index: 0;
+    opacity: 0; /* Fade out the inactive slide */
+    transform: scale(1.05); /* Slightly enlarge the slide for fade-out effect */
+  }
+  
+  .slide.active {
+    z-index: 2;
+    opacity: 1; /* Fully visible when active */
+    transform: scale(1); /* Scale to normal size */
+  }
+  
+  .slide.active.forward {
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease-out;
+  }
+  
+  .slide.active.backward {
+    transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease-out;
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 3; /* Ensure buttons are on top */
+  }
+  
+  .controls button {
+    padding: 12px 24px; /* Refined padding for a luxurious look */
+    font-size: 18px; /* Slightly larger font size */
+    border: none;
+    background: rgba(233, 78, 119, 0.7); /* Transparent pink gradient (opacity adjusted) */
+    color: white; /* White text for contrast */
+    border-radius: 50px; /* Rounded corners for elegance */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .controls button:hover {
+    background: rgba(233, 78, 119, 0.85); /* Slightly less transparent on hover */
+    transform: translateY(-4px); /* Hover effect lifts button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  }
+  
+  .controls button:active {
+    transform: translateY(2px); /* Button presses down when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow on click */
+  }
+  
+  .controls button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(233, 78, 119, 0.5); /* Subtle focus ring */
+  }
