@@ -1,0 +1,114 @@
+/* General styles for RSVP form */
+.rsvp-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent white */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    /* Removed the blur effect */
+}
+
+.rsvp-title {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.form-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.rsvp-submit-btn {
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rsvp-submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.rsvp-submit-btn:active {
+    background-color: #1f6c94;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .rsvp-container {
+        padding: 15px;
+        max-width: 100%;
+        /* Makes the container take up more space on small screens */
+    }
+
+    .rsvp-title {
+        font-size: 1.5rem;
+        /* Smaller font size on mobile */
+    }
+
+    .form-input {
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .rsvp-submit-btn {
+        padding: 10px;
+        /* Adjust button size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .rsvp-container {
+        padding: 10px;
+        /* Further reduce padding on very small screens */
+    }
+
+    .rsvp-title {
+        font-size: 1.25rem;
+        /* Even smaller title font on small screens */
+    }
+
+    .rsvp-submit-btn {
+        padding: 8px;
+        /* Make buttons smaller on very small screens */
+    }
+}

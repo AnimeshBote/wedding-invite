@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
@@ -74,6 +75,9 @@ const Home = () => {
           <button onClick={previousSlide}>Previous</button>
           <button onClick={nextSlide}>Next</button>
         </div>
+        <Link to="/rsvp">
+          <div className='rsvp'><button>RSVP Now</button></div>
+        </Link>
       </div>
     </div>
   );

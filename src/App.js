@@ -53,8 +53,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Events from './pages/Events';
-import RSVPForm from './components/RSVPForm';
+import RSVP from './pages/RSVP';
 
 function App() {
   return (
@@ -62,8 +61,7 @@ function App() {
       {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/rsvp" element={<RSVPForm />} />
+        <Route path="/rsvp" element={<RSVP />} />
       </Routes>
     </Router>
   );
