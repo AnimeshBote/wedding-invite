@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [setScrollPosition] = useState(0);
   const slides = [
     { type: "image", src: "./assets/img/card.png", alt: "Invitation Card" },
     { type: "video", src: "./assets/video/1.mp4" },
