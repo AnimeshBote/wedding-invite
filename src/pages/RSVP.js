@@ -10,6 +10,7 @@ const RSVP = () => {
     <div className="rsvp-container">
       <h2 className="rsvp-title">RSVP to Our Wedding</h2>
       <form name="rsvp" method="post" data-netlify="true" className="rsvp-form">
+      <input type="hidden" name="form-name" value="rsvp" />
         <div className="form-group">
           <label htmlFor="name" className="form-label">Your Name</label>
           <input
