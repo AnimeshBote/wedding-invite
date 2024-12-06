@@ -32,10 +32,6 @@ const Home = () => {
     };
   }, []);
 
-  // Calculate the distance between caricatures based on scroll
-  const maxDistance = 200;
-  const moveFactor = scrollPosition / 10;
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
