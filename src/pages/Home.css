@@ -318,7 +318,7 @@ body::before {
 
   .slider-container {
     position: relative;
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -328,7 +328,7 @@ body::before {
 
   @media (max-width: 768px) {
     .slider-container {
-      width: 50vh;
+      width: 60vh;
       height: 100vh; /* Adjust height for smaller screens */
     }
   }
@@ -373,7 +373,7 @@ body::before {
   
   .controls {
     position: absolute;
-    bottom: 10%;
+    bottom: 12%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
