@@ -33,7 +33,7 @@ img {
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     font-style: normal;
-    font-size: 60px;
+    font-size: 5vw;
     margin: 32px 0;
     color: #674ea7;
 }
@@ -75,21 +75,6 @@ img {
     letter-spacing: 3px;
     font-size: 16px;
 }
-
-.wrap {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    /* padding: 20px; */
-    text-align: center;
-    /* min-height:100%; */
-}
-
 
 /** **/
 
@@ -334,7 +319,6 @@ body::before {
     position: relative;
     width: 100vw;
     height: 100vh;
-    perspective: 2000px; /* Creates a 3D effect for smooth transitions */
     overflow: hidden;
   }
   
