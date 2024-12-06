@@ -1,13 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import './Rsvp.css';
 const RSVP = () => {
+  const navigate = useNavigate();
   // const { register, handleSubmit } = useForm();
   const handleSubmit = event => {
     event.preventDefault();
-
     const myForm = event.target;
     const formData = new FormData(myForm);
-    const navigate = useNavigate();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
