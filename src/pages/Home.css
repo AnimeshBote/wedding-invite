@@ -318,7 +318,7 @@ body::before {
 
   .slider-container {
     position: relative;
-    width: 50vw;
+    width: 35vw;
     height: 100vh;
     overflow: hidden;
     display: flex;
