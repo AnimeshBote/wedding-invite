@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [setScrollPosition] = useState(0);
   const slides = [
     { type: "image", src: "./assets/img/card.png", alt: "Invitation Card" },
     { type: "video", src: "./assets/video/1.mp4" },
@@ -15,20 +14,14 @@ const Home = () => {
     { type: "video", src: "./assets/video/8.mp4" },
   ];
 
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
   useEffect(() => {
     const playAudio = () => {
       document.getElementById("my_audio").play();
       console.log('Shaadi me zaroor aana');
     };
     document.addEventListener('click', playAudio);
-    document.addEventListener('scroll', handleScroll);
     return () => {
       document.removeEventListener('click', playAudio);
-      document.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -64,24 +57,24 @@ const Home = () => {
     <div>
       <audio id="my_audio" src="./assets/mp3/song.mp3"></audio>
       <div className="slider-container">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`slide ${index === currentSlide ? 'active forward' : 'inactive'}`}
-          data-index={index}
-        >
-          {slide.type === 'image' ? (
-            <img src={slide.src} alt={`Slide ${index}`} />
-          ) : (
-            <video src={slide.src} autoPlay muted loop />
-          )}
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`slide ${index === currentSlide ? 'active forward' : 'inactive'}`}
+            data-index={index}
+          >
+            {slide.type === 'image' ? (
+              <img src={slide.src} alt={`Slide ${index}`} />
+            ) : (
+              <video src={slide.src} autoPlay muted loop />
+            )}
+          </div>
+        ))}
+        <div className="controls">
+          <button onClick={previousSlide}>Previous</button>
+          <button onClick={nextSlide}>Next</button>
         </div>
-      ))}
-      <div className="controls">
-        <button onClick={previousSlide}>Previous</button>
-        <button onClick={nextSlide}>Next</button>
       </div>
-    </div>
     </div>
   );
 };
