@@ -3,14 +3,17 @@ const RSVP = () => {
 
 
   return (
-    <div class="container">
+    <div class="form-container">
       <form name="contact" method="post">
         <input type="hidden" name="form-name" value="contact" />
-        <p>Welcome</p>
-        <input type="text" placeholder="Name" /><br />
-        <input type="date" placeholder="Arrival Date" /><br />
-        <input type="text" placeholder="Guest Count" /><br />
-        <input type="submit" value="Send" /><br />
+        <h2>Reservation Form</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required/>
+        <label for="date">Date of Arrival</label>
+        <input type="date" id="date" name="date" required/>
+        <label for="guests">Number of Guests</label>
+        <input type="number" id="guests" name="guests" min="1" placeholder="Enter number of guests" required/>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
