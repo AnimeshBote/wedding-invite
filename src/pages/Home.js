@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
+  const audioRef = useRef(null);
   const slides = [
     { type: "image", src: "./assets/img/card.png", alt: "Invitation Card" },
     { type: "video", src: "./assets/video/1.mp4" },
@@ -16,13 +17,20 @@ const Home = () => {
   ];
 
   useEffect(() => {
+    const handleVisibilityChange = () => {
+      if(document.hidden && audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
     const playAudio = () => {
       document.getElementById("my_audio").play();
       console.log('Shaadi me zaroor aana');
     };
     document.addEventListener('click', playAudio);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => {
       document.removeEventListener('click', playAudio);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -56,7 +64,7 @@ const Home = () => {
 
   return (
     <div>
-      <audio id="my_audio" src="./assets/mp3/song.mp3"></audio>
+      <audio id="my_audio" ref={audioRef} src="./assets/mp3/song.mp3"></audio>
       <div className="slider-container">
         {slides.map((slide, index) => (
           <div
