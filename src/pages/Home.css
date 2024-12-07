@@ -407,7 +407,7 @@ body::before {
   .rsvp {
     position: fixed;          /* Fixes the button relative to the viewport */
     top: 12px;                /* Adjust space from the top */
-    left: 56%;                /* Positions the button horizontally in the center */
+    margin-left: 10px;
     width: 20vh;
     transform: translateX(-50%); /* Offsets the button's width by 50% to fully center */
     display: flex;
@@ -428,9 +428,8 @@ body::before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     /* Align the button to the top-left of the page */
-    position: absolute;
+    text-align: center;
     top: 10px; /* Adjust this value for spacing from the top */
-    left: 10px; /* Adjust this value for spacing from the left */
   }
   
   .rsvp button:hover {
