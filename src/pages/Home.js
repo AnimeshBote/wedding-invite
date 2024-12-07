@@ -114,7 +114,7 @@ const Home = () => {
           style={{
             position: "absolute",
             top: "10px",
-            right: "10px",
+            right: "50px",
             width: "50px",
             height: "50px",
             background: "rgba(255, 255, 255, 0.3)", // Semi-transparent white
@@ -148,7 +148,7 @@ const Home = () => {
           style={{
             position: "absolute",
             top: "10px", // Positioned at the top
-            left: "10px", // Positioned to the left
+            left: "50px", // Positioned to the left
             width: "50px",
             height: "50px",
             background: "rgba(255, 255, 255, 0.3)", // Semi-transparent white
