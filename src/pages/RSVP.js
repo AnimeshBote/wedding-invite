@@ -1,7 +1,8 @@
 import './Rsvp.css';
+import { useNavigate } from 'react-router-dom';
 const RSVP = () => {
 
-
+  const navigate = useNavigate();
   return (
     <div class="form-container">
       <form name="contact" method="post">
@@ -15,6 +16,7 @@ const RSVP = () => {
         <input type="number" id="guests" name="guests" min="1" placeholder="Enter number of guests" required/>
         <button type="submit">Submit</button>
       </form>
+      <button id="back_btn" onClick={() => navigate(-1)}>Back</button>
     </div>
   );
 

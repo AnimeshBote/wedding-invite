@@ -64,6 +64,9 @@ body {
   button:hover {
     background: rgba(255, 255, 255, 0.5);
   }
+  #back_btn {
+    width: inherit;
+  }
   @media (max-width: 480px) {
     .form-container {
       padding: 1rem;
