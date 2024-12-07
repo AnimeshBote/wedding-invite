@@ -7,6 +7,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .form-container {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -22,15 +23,18 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
   h2 {
     color: white;
     margin-bottom: 1rem;
   }
+
   label {
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
+
   input {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -43,13 +47,16 @@ body {
     outline: none;
     transition: all 0.3s ease-in-out;
   }
+
   input::placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
+
   input:focus {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
   }
+
   button {
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -61,26 +68,34 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
+
   button:hover {
     background: rgba(255, 255, 255, 0.5);
   }
+
   #back_btn {
     width: inherit;
   }
-  @media (max-width: 480px) {
-    .form-container {
-      padding: 1rem;
-    }
-    input, button {
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1rem;
+
+    input,
+    button {
       font-size: 0.9rem;
       padding: 0.6rem;
     }
   }
-  @media (max-width: 768px) {
-    .form-container {
-      padding: 1rem;
-    }
-    input, button {
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1rem;
+
+    input,
+    button {
       font-size: 0.9rem;
       padding: 0.6rem;
     }
