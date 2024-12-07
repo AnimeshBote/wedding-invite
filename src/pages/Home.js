@@ -18,6 +18,7 @@ const Home = () => {
   ];
 
   const audioRef = useRef(null);
+  const [toggleButtonUsed, setToggleButtonUsed] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -28,8 +29,13 @@ const Home = () => {
     };
     const playAudio = () => {
       if(audioRef.current) {
-        audioRef.current.play();
-        console.log('Shaadi me zaroor aana');
+        console.log('before : ', isMuted);
+        if(!toggleButtonUsed) {
+          audioRef.current.play();
+          setIsMuted(false);
+          console.log('Shaadi me zaroor aana', isMuted);
+        } 
+        
       }
     };
     document.addEventListener('click', playAudio);
@@ -38,12 +44,19 @@ const Home = () => {
       document.removeEventListener('click', playAudio);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, []);
-  const toggleMute = () => {
+  }, [isMuted, toggleButtonUsed]);
+  const toggleMute = (event) => {
+    setToggleButtonUsed(true);
     if (audioRef.current) {
+      if(isMuted) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
       audioRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
     }
+    event.stopPropagation();
   };
   const [currentSlide, setCurrentSlide] = useState(0);
   
