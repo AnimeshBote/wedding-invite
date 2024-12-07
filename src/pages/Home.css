@@ -2,7 +2,8 @@
 
 body {
     font-family: Arial, Helvetica, Sans-serif;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
+    /* Prevent scrolling */
 }
 
 img {
@@ -313,10 +314,10 @@ body::before {
 .clip {
     width: 100%;
     height: auto;
-  }
+}
 
 
-  .slider-container {
+.slider-container {
     position: relative;
     height: 100vh;
     width: 60vh;
@@ -324,120 +325,156 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .slider-container {
-      height: 100vh; /* Adjust height for smaller screens */
+        height: 100vh;
+        /* Adjust height for smaller screens */
     }
-  }
-  
-  .slide {
+}
+
+.slide {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease-out;
     z-index: 1;
-    opacity: 0; /* Start with the slide hidden */
-    transform: scale(1.05); /* Slightly scale the slide for a more dynamic effect */
-  }
-  
-  .slide img,
-  .slide video {
+    opacity: 0;
+    /* Start with the slide hidden */
+    transform: scale(1.05);
+    /* Slightly scale the slide for a more dynamic effect */
+}
+
+.slide img,
+.slide video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .slide.inactive {
+}
+
+.slide.inactive {
     z-index: 0;
-    opacity: 0; /* Fade out the inactive slide */
-    transform: scale(1.05); /* Slightly enlarge the slide for fade-out effect */
-  }
-  
-  .slide.active {
+    opacity: 0;
+    /* Fade out the inactive slide */
+    transform: scale(1.05);
+    /* Slightly enlarge the slide for fade-out effect */
+}
+
+.slide.active {
     z-index: 2;
-    opacity: 1; /* Fully visible when active */
-    transform: scale(1); /* Scale to normal size */
-  }
-  
-  .slide.active.forward {
+    opacity: 1;
+    /* Fully visible when active */
+    transform: scale(1);
+    /* Scale to normal size */
+}
+
+.slide.active.forward {
     transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease-out;
-  }
-  
-  .slide.active.backward {
+}
+
+.slide.active.backward {
     transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s ease-out;
-  }
-  
-  .controls {
+}
+
+.controls {
     position: absolute;
     bottom: 12%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
-    z-index: 3; /* Ensure buttons are on top */
-  }
-  
-  .controls button {
-    padding: 12px 24px; /* Refined padding for a luxurious look */
-    font-size: 18px; /* Slightly larger font size */
-    border: none;
-    background: rgba(233, 78, 119, 0.7); /* Transparent pink gradient (opacity adjusted) */
-    color: white; /* White text for contrast */
-    border-radius: 50px; /* Rounded corners for elegance */
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  }
-  
-  .controls button:hover {
-    background: rgba(233, 78, 119, 0.85); /* Slightly less transparent on hover */
-    transform: translateY(-4px); /* Hover effect lifts button */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  }
-  
-  .controls button:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 3px rgba(233, 78, 119, 0.5); /* Subtle focus ring */
-  }
+    z-index: 3;
+    /* Ensure buttons are on top */
+}
 
-  .rsvp {
-    position: fixed;          /* Fixes the button relative to the viewport */
-    top: 12px;                /* Adjust space from the top */
+.controls button {
+    padding: 12px 24px;
+    /* Refined padding for a luxurious look */
+    font-size: 18px;
+    /* Slightly larger font size */
+    border: none;
+    background: rgba(233, 78, 119, 0.7);
+    /* Transparent pink gradient (opacity adjusted) */
+    color: white;
+    /* White text for contrast */
+    border-radius: 50px;
+    /* Rounded corners for elegance */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.controls button:hover {
+    background: rgba(233, 78, 119, 0.85);
+    /* Slightly less transparent on hover */
+    transform: translateY(-4px);
+    /* Hover effect lifts button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow */
+}
+
+.controls button:focus {
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(233, 78, 119, 0.5);
+    /* Subtle focus ring */
+}
+
+.rsvp {
+    position: fixed;
+    /* Fixes the button relative to the viewport */
+    top: 12px;
+    /* Adjust space from the top */
     margin-left: 10px;
     width: 20vh;
-    transform: translateX(-50%); /* Offsets the button's width by 50% to fully center */
+    transform: translateX(-50%);
+    /* Offsets the button's width by 50% to fully center */
     display: flex;
     gap: 20px;
-    z-index: 3;               /* Ensures the button is on top of other elements */
-    justify-content: center;  /* Ensures flex items (buttons) are centered if there are multiple */
-  }
-  
+    z-index: 3;
+    /* Ensures the button is on top of other elements */
+    justify-content: center;
+    /* Ensures flex items (buttons) are centered if there are multiple */
+}
 
-  .rsvp button {
-    padding: 12px 24px; /* Refined padding for a luxurious look */
-    font-size: 18px; /* Slightly larger font size */
+
+.rsvp button {
+    padding: 12px 24px;
+    /* Refined padding for a luxurious look */
+    font-size: 18px;
+    /* Slightly larger font size */
     border: none;
-    background: rgba(233, 78, 119, 0.7); /* Transparent pink gradient (opacity adjusted) */
-    color: white; /* White text for contrast */
-    border-radius: 50px; /* Rounded corners for elegance */
+    background: rgba(233, 78, 119, 0.7);
+    /* Transparent pink gradient (opacity adjusted) */
+    color: white;
+    /* White text for contrast */
+    border-radius: 50px;
+    /* Rounded corners for elegance */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     /* Align the button to the top-left of the page */
     text-align: center;
-    top: 10px; /* Adjust this value for spacing from the top */
-  }
-  
-  .rsvp button:hover {
-    background: rgba(233, 78, 119, 0.85); /* Slightly less transparent on hover */
-    transform: translateY(-4px); /* Hover effect lifts button */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  }
-  
-  .rsvp button:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 3px rgba(233, 78, 119, 0.5); /* Subtle focus ring */
-  }
+    top: 10px;
+    /* Adjust this value for spacing from the top */
+}
+
+.rsvp button:hover {
+    background: rgba(233, 78, 119, 0.85);
+    /* Slightly less transparent on hover */
+    transform: translateY(-4px);
+    /* Hover effect lifts button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow */
+}
+
+.rsvp button:focus {
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(233, 78, 119, 0.5);
+    /* Subtle focus ring */
+}
