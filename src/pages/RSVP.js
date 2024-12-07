@@ -16,7 +16,7 @@ const RSVP = () => {
         <input type="number" id="guests" name="guests" min="1" placeholder="Enter number of guests" required/>
         <button type="submit">Submit</button>
       </form>
-      <button id="back_btn" onClick={() => navigate(-1)}>Back</button>
+      <button id="back_btn" onClick={() => navigate('/')}>Back</button>
     </div>
   );
 
